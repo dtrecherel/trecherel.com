@@ -1,0 +1,5 @@
+enabled: true
+css_files:
+  -
+    path: /user/css/afterburner2.css
+    priority: 1

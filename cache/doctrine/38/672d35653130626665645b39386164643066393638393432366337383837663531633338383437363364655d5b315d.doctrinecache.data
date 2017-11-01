@@ -1,0 +1,16 @@
+1510132992
+a:2:{s:7:"content";s:1306:"<p>In 2014, Airbus Defense and Space organized its first cybersecurity challenge named &#8220;Trust The Future&#8221;, and restricted to a few French engineering schools. This is the <code>Google.fr</code> challenge, <a href="https://www.trecherel.com/airbus/trust-the-future" title="The other challenges of A&D Trust The Future">the other ones can be found here.</a></p>
+<p>===</p>
+<p>Let&#8217;s take a look at the <code>Google.fr</code> files. We have an <code>.html</code> and a <code>.png</code> file. We didn&#8217;t see anything useful in the file <code>Google.html</code>. However after looking closer at the image <code>logo11w.png</code>, we notice seven black pixels on it.</p>
+<p><img title="Google logo with black pixels" alt="Seven black pixels" src="/user/pages/01.home/Airbus_Trust-The-Future_Google/files/logo11w_black_pixels.png" /></p>
+<p>The trick here was to note down their coordinates. We quickly notice that they range between 50 and 120, which means they can represent ASCII character:</p>
+<pre><code class="language-text">  X;Y
+
+ 72; 97    Ha
+ 73; 95    I_
+ 95; 83    _S  
+103; 97    ga 
+110;111    no
+116; 51    t3
+116;101    te</code></pre>
+<p>The token is <code>I_Hate_St3gano</code>. (I&#8217;m not sure about <code>te/t3</code>, so if someone remembers, contact me. ;-) )</p>";s:12:"content_meta";N;}

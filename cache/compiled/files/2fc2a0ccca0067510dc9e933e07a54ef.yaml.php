@@ -2,10 +2,10 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/var/www/www/user/plugins/email/blueprints.yaml',
-    'modified' => 1508606921,
+    'modified' => 1509188946,
     'data' => [
         'name' => 'Email',
-        'version' => '2.6.2',
+        'version' => '2.7.0',
         'description' => 'Enables the emailing system for Grav',
         'icon' => 'envelope',
         'author' => [
@@ -46,8 +46,7 @@ return [
                     'options' => [
                         'none' => 'Disabled',
                         'smtp' => 'SMTP',
-                        'sendmail' => 'Sendmail',
-                        'mail' => 'PHP Mail'
+                        'sendmail' => 'Sendmail'
                     ]
                 ],
                 'content_type' => [

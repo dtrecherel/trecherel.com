@@ -1,13 +1,29 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1508611141,
-    'checksum' => 'a2417db7d0aed25125dd80fefdc65e95',
+    'timestamp' => 1509528192,
+    'checksum' => '40f6b97bf310807f420533b95e82ac70',
     'files' => [
         'user/config' => [
             'media' => [
                 'file' => 'user/config/media.yaml',
                 'modified' => 1508607151
+            ],
+            'plugins/aboutme' => [
+                'file' => 'user/config/plugins/aboutme.yaml',
+                'modified' => 1509312196
+            ],
+            'plugins/custom-css' => [
+                'file' => 'user/config/plugins/custom-css.yaml',
+                'modified' => 1508615399
+            ],
+            'plugins/highlight' => [
+                'file' => 'user/config/plugins/highlight.yaml',
+                'modified' => 1509200190
+            ],
+            'plugins/simplesearch' => [
+                'file' => 'user/config/plugins/simplesearch.yaml',
+                'modified' => 1509302655
             ],
             'security' => [
                 'file' => 'user/config/security.yaml',
@@ -15,7 +31,7 @@ return [
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1508316082
+                'modified' => 1509267303
             ],
             'streams' => [
                 'file' => 'user/config/streams.yaml',
@@ -23,39 +39,55 @@ return [
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1508610959
+                'modified' => 1509528190
+            ],
+            'themes/afterburner2' => [
+                'file' => 'user/config/themes/afterburner2.yaml',
+                'modified' => 1508612212
             ]
         ],
         'system/config' => [
             'media' => [
                 'file' => 'system/config/media.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'site' => [
                 'file' => 'system/config/site.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'streams' => [
                 'file' => 'system/config/streams.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'system' => [
                 'file' => 'system/config/system.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ]
         ],
         'user/plugins' => [
+            'plugins/highlight' => [
+                'file' => 'user/plugins/highlight/highlight.yaml',
+                'modified' => 1509200183
+            ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/error.yaml',
                 'modified' => 1508316084
             ],
+            'plugins/custom-css' => [
+                'file' => 'user/plugins/custom-css/custom-css.yaml',
+                'modified' => 1508614492
+            ],
             'plugins/admin' => [
                 'file' => 'user/plugins/admin/admin.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/email.yaml',
-                'modified' => 1508606921
+                'modified' => 1509188946
+            ],
+            'plugins/pagination' => [
+                'file' => 'user/plugins/pagination/pagination.yaml',
+                'modified' => 1509295203
             ],
             'plugins/markdown-notices' => [
                 'file' => 'user/plugins/markdown-notices/markdown-notices.yaml',
@@ -63,7 +95,11 @@ return [
             ],
             'plugins/form' => [
                 'file' => 'user/plugins/form/form.yaml',
-                'modified' => 1508606918
+                'modified' => 1509188950
+            ],
+            'plugins/simplesearch' => [
+                'file' => 'user/plugins/simplesearch/simplesearch.yaml',
+                'modified' => 1509294738
             ],
             'plugins/login' => [
                 'file' => 'user/plugins/login/login.yaml',
@@ -72,15 +108,41 @@ return [
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/problems.yaml',
                 'modified' => 1508316084
+            ],
+            'plugins/taxonomylist' => [
+                'file' => 'user/plugins/taxonomylist/taxonomylist.yaml',
+                'modified' => 1508618384
+            ],
+            'plugins/smartypants' => [
+                'file' => 'user/plugins/smartypants/smartypants.yaml',
+                'modified' => 1508618366
+            ],
+            'plugins/aboutme' => [
+                'file' => 'user/plugins/aboutme/aboutme.yaml',
+                'modified' => 1509310987
             ]
         ]
     ],
     'data' => [
         'plugins' => [
+            'highlight' => [
+                'enabled' => true,
+                'theme' => 'monokai',
+                'lines' => false
+            ],
             'error' => [
                 'enabled' => true,
                 'routes' => [
                     404 => '/error'
+                ]
+            ],
+            'custom-css' => [
+                'enabled' => true,
+                'css_files' => [
+                    0 => [
+                        'path' => '/user/css/afterburner2.css',
+                        'priority' => 1
+                    ]
                 ]
             ],
             'admin' => [
@@ -148,7 +210,7 @@ return [
                 'to' => NULL,
                 'to_name' => NULL,
                 'mailer' => [
-                    'engine' => 'mail',
+                    'engine' => 'sendmail',
                     'smtp' => [
                         'server' => 'localhost',
                         'port' => 25,
@@ -157,11 +219,16 @@ return [
                         'password' => ''
                     ],
                     'sendmail' => [
-                        'bin' => '/usr/sbin/sendmail'
+                        'bin' => '/usr/sbin/sendmail -bs'
                     ]
                 ],
                 'content_type' => 'text/html',
                 'debug' => false
+            ],
+            'pagination' => [
+                'enabled' => true,
+                'built_in_css' => true,
+                'delta' => 0
             ],
             'markdown-notices' => [
                 'enabled' => true,
@@ -183,9 +250,30 @@ return [
                     'destination' => 'self@',
                     'avoid_overwriting' => false,
                     'random_name' => false,
+                    'filesize' => 0,
                     'accept' => [
                         0 => 'image/*'
                     ]
+                ]
+            ],
+            'simplesearch' => [
+                'enabled' => true,
+                'built_in_css' => true,
+                'display_button' => false,
+                'min_query_length' => 3,
+                'route' => '/search',
+                'search_content' => 'raw',
+                'template' => 'simplesearch_results',
+                'filters' => [
+                    'category' => [
+                        0 => '@none'
+                    ]
+                ],
+                'filter_combinator' => 'and',
+                'ignore_accented_characters' => true,
+                'order' => [
+                    'by' => 'date',
+                    'dir' => 'desc'
                 ]
             ],
             'login' => [
@@ -238,6 +326,77 @@ return [
             'problems' => [
                 'enabled' => true,
                 'built_in_css' => true
+            ],
+            'taxonomylist' => [
+                'enabled' => true,
+                'route' => '/blog'
+            ],
+            'smartypants' => [
+                'enabled' => true,
+                'twig_filter' => true,
+                'enabled_in_admin' => false,
+                'process_title' => false,
+                'process_content' => true,
+                'options' => 'qDew'
+            ],
+            'aboutme' => [
+                'enabled' => true,
+                'built_in_css' => true,
+                'name' => 'Didier Trécherel',
+                'title' => 'Present Giver',
+                'description' => 'I love cats, infosec, and pineapple on my pizza :3',
+                'picture_src' => [
+                    'user/plugins/aboutme/assets/avatars/avatar.jpg' => [
+                        'name' => 'avatar.jpg',
+                        'type' => 'image/jpeg',
+                        'size' => 24946,
+                        'path' => 'user/plugins/aboutme/assets/avatars/avatar.jpg'
+                    ]
+                ],
+                'gravatar' => [
+                    'enabled' => false,
+                    'email' => 'example@test.com',
+                    'size' => 100
+                ],
+                'social_pages' => [
+                    'enabled' => true,
+                    'use_font_awesome' => false,
+                    'pages' => [
+                        'facebook' => [
+                            'icon' => 'facebook-official',
+                            'title' => 'Facebook',
+                            'position' => 1
+                        ],
+                        'twitter' => [
+                            'icon' => 'twitter',
+                            'title' => 'Twitter',
+                            'position' => 2,
+                            'url' => 'https://www.twitter.com/dtrecherel'
+                        ],
+                        'google_plus' => [
+                            'icon' => 'google-plus-square',
+                            'title' => 'Google+',
+                            'position' => 3
+                        ],
+                        'github' => [
+                            'icon' => 'github',
+                            'title' => 'GitHub',
+                            'position' => 4,
+                            'url' => 'https://github.com/dtrecherel'
+                        ],
+                        'linkedin' => [
+                            'icon' => 'linkedin-square',
+                            'title' => 'LinkedIn',
+                            'position' => 5,
+                            'url' => 'https://www.linkedin.com/in/dtrecherel/'
+                        ],
+                        'instagram' => [
+                            'icon' => 'instagram',
+                            'title' => 'Instagram',
+                            'position' => 6
+                        ]
+                    ]
+                ]
             ]
         ],
         'media' => [
@@ -507,18 +666,18 @@ return [
             ]
         ],
         'site' => [
-            'title' => 'Grav',
+            'title' => 'Didier Trécherel - Yuriko\'s writeups',
             'default_lang' => 'en',
             'author' => [
-                'name' => 'Joe Bloggs',
-                'email' => 'joe@test.com'
+                'name' => 'Didier Trécherel',
+                'email' => 'didier.trecherel@gmail.com'
             ],
             'taxonomies' => [
                 0 => 'category',
                 1 => 'tag'
             ],
             'metadata' => [
-                'description' => 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+                'description' => 'I\'m Didier Trécherel, a guy in computer security, and this is my small corner of the web where I\'ll post some writeups on CTF and stuff like that.'
             ],
             'summary' => [
                 'enabled' => true,
@@ -579,10 +738,10 @@ return [
             ],
             'home' => [
                 'alias' => '/home',
-                'hide_in_urls' => false
+                'hide_in_urls' => true
             ],
             'pages' => [
-                'theme' => 'antimatter',
+                'theme' => 'afterburner2',
                 'order' => [
                     'by' => 'default',
                     'dir' => 'asc'
@@ -632,7 +791,7 @@ return [
                 'etag' => false,
                 'vary_accept_encoding' => false,
                 'redirect_default_route' => false,
-                'redirect_default_code' => 302,
+                'redirect_default_code' => '302',
                 'redirect_trailing_slash' => true,
                 'ignore_files' => [
                     0 => '.DS_Store'
@@ -693,7 +852,7 @@ return [
                 ]
             ],
             'errors' => [
-                'display' => true,
+                'display' => '1',
                 'log' => true
             ],
             'debugger' => [
@@ -704,7 +863,7 @@ return [
                 'twig' => true
             ],
             'images' => [
-                'default_image_quality' => 85,
+                'default_image_quality' => 100,
                 'cache_all' => false,
                 'cache_perms' => '0755',
                 'debug' => false,
@@ -718,7 +877,8 @@ return [
                 'allowed_fallback_types' => [
                     
                 ],
-                'auto_metadata_exif' => false
+                'auto_metadata_exif' => false,
+                'upload_limit' => 2097152
             ],
             'session' => [
                 'enabled' => true,
@@ -739,6 +899,13 @@ return [
         ],
         'security' => [
             'salt' => '3JcalDT9BAYpd4'
+        ],
+        'themes' => [
+            'afterburner2' => [
+                'dropdown' => [
+                    'enabled' => true
+                ]
+            ]
         ]
     ]
 ];

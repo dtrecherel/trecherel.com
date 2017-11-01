@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/var/www/www/user/plugins/form/form.yaml',
-    'modified' => 1508606918,
+    'modified' => 1509188950,
     'data' => [
         'enabled' => true,
         'built_in_css' => true,
@@ -13,6 +13,7 @@ return [
             'destination' => 'self@',
             'avoid_overwriting' => false,
             'random_name' => false,
+            'filesize' => 0,
             'accept' => [
                 0 => 'image/*'
             ]

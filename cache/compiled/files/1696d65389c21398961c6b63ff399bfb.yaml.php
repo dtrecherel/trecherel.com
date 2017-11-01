@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/var/www/www/system/languages/lt.yaml',
-    'modified' => 1508316082,
+    'modified' => 1509188922,
     'data' => [
         'INFLECTOR_UNCOUNTABLE' => [
             2 => 'ryžiai',

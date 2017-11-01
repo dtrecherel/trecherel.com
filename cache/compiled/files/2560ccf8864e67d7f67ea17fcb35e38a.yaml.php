@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/var/www/www/system/languages/sk.yaml',
-    'modified' => 1508316082,
+    'modified' => 1509188922,
     'data' => [
         'NICETIME' => [
             'NO_DATE_PROVIDED' => 'Neposkytnutý žiaden dátum',

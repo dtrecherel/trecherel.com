@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/var/www/www/user/plugins/form/languages.yaml',
-    'modified' => 1508606918,
+    'modified' => 1509188950,
     'data' => [
         'en' => [
             'PLUGIN_FORM' => [
@@ -43,7 +43,15 @@ return [
                 'YES' => 'Yes',
                 'NO' => 'No',
                 'REFRESH_PREVENTION' => 'Refresh prevention',
-                'REFRESH_PREVENTION_HELP' => 'Use the form\'s unique ID to ensure the same form is not reprocessed when refreshing the browser'
+                'REFRESH_PREVENTION_HELP' => 'Use the form\'s unique ID to ensure the same form is not reprocessed when refreshing the browser',
+                'LIMIT' => 'Limit',
+                'LIMIT_HELP' => 'Maximum number of allowed files per field (multiple required)',
+                'FILESIZE' => 'Max Filesize',
+                'FILESIZE_HELP' => 'Maximum file size allowed (in MB), 0 = Use system default',
+                'AVOID_OVERWRITING' => 'Avoid overwriting',
+                'AVOID_OVERWRITING_HELP' => 'Prevent files with the same name to be overridden. Date prefix will be added',
+                'RANDOM_NAME' => 'Random name',
+                'RANDOM_NAME_HELP' => 'Generate a random 15 long string name for the uploaded files'
             ]
         ],
         'de' => [

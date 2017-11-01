@@ -1,121 +1,121 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledLanguages',
-    'timestamp' => 1508611141,
-    'checksum' => 'f57743965a4e1db949499b7f0310139f',
+    'timestamp' => 1509528193,
+    'checksum' => '9da678303d313aa529ff9f3c94c695f4',
     'files' => [
         'system/languages' => [
             'ar' => [
                 'file' => 'system/languages/ar.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'ca' => [
                 'file' => 'system/languages/ca.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'cs' => [
                 'file' => 'system/languages/cs.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'da' => [
                 'file' => 'system/languages/da.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'de' => [
                 'file' => 'system/languages/de.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'el' => [
                 'file' => 'system/languages/el.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'en' => [
                 'file' => 'system/languages/en.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'es' => [
                 'file' => 'system/languages/es.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'fi' => [
                 'file' => 'system/languages/fi.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'fr' => [
                 'file' => 'system/languages/fr.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'hr' => [
                 'file' => 'system/languages/hr.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'hu' => [
                 'file' => 'system/languages/hu.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'it' => [
                 'file' => 'system/languages/it.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'ja' => [
                 'file' => 'system/languages/ja.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'lt' => [
                 'file' => 'system/languages/lt.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'nb' => [
                 'file' => 'system/languages/nb.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'nl' => [
                 'file' => 'system/languages/nl.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'no' => [
                 'file' => 'system/languages/no.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'pl' => [
                 'file' => 'system/languages/pl.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'pt' => [
                 'file' => 'system/languages/pt.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'ro' => [
                 'file' => 'system/languages/ro.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'ru' => [
                 'file' => 'system/languages/ru.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'sk' => [
                 'file' => 'system/languages/sk.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'sv' => [
                 'file' => 'system/languages/sv.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'th' => [
                 'file' => 'system/languages/th.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'tr' => [
                 'file' => 'system/languages/tr.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'uk' => [
                 'file' => 'system/languages/uk.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ],
             'vi' => [
                 'file' => 'system/languages/vi.yaml',
-                'modified' => 1508316082
+                'modified' => 1509188922
             ]
         ],
         'user/plugins' => [
@@ -125,11 +125,15 @@ return [
             ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/languages.yaml',
-                'modified' => 1508606921
+                'modified' => 1509188946
             ],
             'plugins/form' => [
                 'file' => 'user/plugins/form/languages.yaml',
-                'modified' => 1508606918
+                'modified' => 1509188950
+            ],
+            'plugins/simplesearch' => [
+                'file' => 'user/plugins/simplesearch/languages.yaml',
+                'modified' => 1509294738
             ],
             'plugins/login' => [
                 'file' => 'user/plugins/login/languages.yaml',
@@ -139,139 +143,139 @@ return [
         'user/plugins/admin/languages' => [
             'ar' => [
                 'file' => 'user/plugins/admin/languages/ar.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'bg' => [
                 'file' => 'user/plugins/admin/languages/bg.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'br' => [
                 'file' => 'user/plugins/admin/languages/br.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'ca' => [
                 'file' => 'user/plugins/admin/languages/ca.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'cs' => [
                 'file' => 'user/plugins/admin/languages/cs.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'cy' => [
                 'file' => 'user/plugins/admin/languages/cy.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'da' => [
                 'file' => 'user/plugins/admin/languages/da.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'de' => [
                 'file' => 'user/plugins/admin/languages/de.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'el' => [
                 'file' => 'user/plugins/admin/languages/el.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'en' => [
                 'file' => 'user/plugins/admin/languages/en.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'es' => [
                 'file' => 'user/plugins/admin/languages/es.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'fa' => [
                 'file' => 'user/plugins/admin/languages/fa.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'fi' => [
                 'file' => 'user/plugins/admin/languages/fi.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'fr' => [
                 'file' => 'user/plugins/admin/languages/fr.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'hr' => [
                 'file' => 'user/plugins/admin/languages/hr.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'hu' => [
                 'file' => 'user/plugins/admin/languages/hu.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'it' => [
                 'file' => 'user/plugins/admin/languages/it.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'ja' => [
                 'file' => 'user/plugins/admin/languages/ja.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'ko' => [
                 'file' => 'user/plugins/admin/languages/ko.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'lt' => [
                 'file' => 'user/plugins/admin/languages/lt.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'nl' => [
                 'file' => 'user/plugins/admin/languages/nl.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'no' => [
                 'file' => 'user/plugins/admin/languages/no.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'pl' => [
                 'file' => 'user/plugins/admin/languages/pl.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'pt' => [
                 'file' => 'user/plugins/admin/languages/pt.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'ro' => [
                 'file' => 'user/plugins/admin/languages/ro.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'ru' => [
                 'file' => 'user/plugins/admin/languages/ru.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'sk' => [
                 'file' => 'user/plugins/admin/languages/sk.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'sv' => [
                 'file' => 'user/plugins/admin/languages/sv.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'th' => [
                 'file' => 'user/plugins/admin/languages/th.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'tlh' => [
                 'file' => 'user/plugins/admin/languages/tlh.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'tr' => [
                 'file' => 'user/plugins/admin/languages/tr.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'uk' => [
                 'file' => 'user/plugins/admin/languages/uk.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'vi' => [
                 'file' => 'user/plugins/admin/languages/vi.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ],
             'zh' => [
                 'file' => 'user/plugins/admin/languages/zh.yaml',
-                'modified' => 1508606928
+                'modified' => 1509188942
             ]
         ]
     ],
@@ -2630,6 +2634,12 @@ Ruta: `%2$s`
                 'YES' => 'Ano',
                 'NO' => 'Ne'
             ],
+            'PLUGIN_SIMPLESEARCH' => [
+                'SEARCH_PLACEHOLDER' => 'Vyhledat...',
+                'SEARCH_RESULTS' => 'Výsledky hledání',
+                'SEARCH_RESULTS_SUMMARY_SINGULAR' => 'Hledání výrazu \'<strong>%s</strong>\' našlo jeden výsledek',
+                'SEARCH_RESULTS_SUMMARY_PLURAL' => 'Hledání výrazu \'<strong>%s</strong>\' našlo %s výsledků'
+            ],
             'INFLECTOR_UNCOUNTABLE' => [
                 0 => 'vybavení',
                 1 => 'informace',
@@ -4089,6 +4099,12 @@ Sti: `%2$s`
                 'ACCEPT_HELP' => 'Eine Liste von MIME-Typen, die hochgeladen werden dürfen.',
                 'ERROR_VALIDATING_CAPTCHA' => 'Die Überprüfung des Captcha ist fehlgeschlagen.'
             ],
+            'PLUGIN_SIMPLESEARCH' => [
+                'SEARCH_PLACEHOLDER' => 'Suche...',
+                'SEARCH_RESULTS' => 'Suchergebnisse',
+                'SEARCH_RESULTS_SUMMARY_SINGULAR' => 'Suche: <strong>%s</strong> fand ein Ergebnis',
+                'SEARCH_RESULTS_SUMMARY_PLURAL' => 'Suche: <strong>%s</strong> fand %s Ergebnisse'
+            ],
             'PLUGIN_LOGIN' => [
                 'USERNAME' => 'Benutzername',
                 'EMAIL' => 'Email',
@@ -5353,7 +5369,22 @@ You have **2FA** enabled on this account. Please use your **2FA** app to enter t
                 'YES' => 'Yes',
                 'NO' => 'No',
                 'REFRESH_PREVENTION' => 'Refresh prevention',
-                'REFRESH_PREVENTION_HELP' => 'Use the form\'s unique ID to ensure the same form is not reprocessed when refreshing the browser'
+                'REFRESH_PREVENTION_HELP' => 'Use the form\'s unique ID to ensure the same form is not reprocessed when refreshing the browser',
+                'LIMIT' => 'Limit',
+                'LIMIT_HELP' => 'Maximum number of allowed files per field (multiple required)',
+                'FILESIZE' => 'Max Filesize',
+                'FILESIZE_HELP' => 'Maximum file size allowed (in MB), 0 = Use system default',
+                'AVOID_OVERWRITING' => 'Avoid overwriting',
+                'AVOID_OVERWRITING_HELP' => 'Prevent files with the same name to be overridden. Date prefix will be added',
+                'RANDOM_NAME' => 'Random name',
+                'RANDOM_NAME_HELP' => 'Generate a random 15 long string name for the uploaded files'
+            ],
+            'PLUGIN_SIMPLESEARCH' => [
+                'SEARCH_PLACEHOLDER' => 'Search...',
+                'SEARCH_RESULTS' => 'Search Results',
+                'SEARCH_RESULTS_SUMMARY_SINGULAR' => 'Query: <strong>%s</strong> found one result',
+                'SEARCH_RESULTS_SUMMARY_PLURAL' => 'Query: <strong>%s</strong> found %s results',
+                'SEARCH_FIELD_MINIMUM_CHARACTERS' => 'Please add at least %s characters'
             ],
             'PLUGIN_LOGIN' => [
                 'USERNAME' => 'Username',
@@ -6270,6 +6301,12 @@ Path: `%2$s`
                 'RECAPTCHA_SECRET_KEY' => 'Secret key',
                 'RECAPTCHA_SECRET_KEY_HELP' => 'Para más información visita https://developers.google.com/recaptcha'
             ],
+            'PLUGIN_SIMPLESEARCH' => [
+                'SEARCH_PLACEHOLDER' => 'Buscar...',
+                'SEARCH_RESULTS' => 'Resultados de la búsqueda',
+                'SEARCH_RESULTS_SUMMARY_SINGULAR' => 'Consulta: <strong>%s</strong> se encontró 1 resultado',
+                'SEARCH_RESULTS_SUMMARY_PLURAL' => 'Consulta: <strong>%s</strong> se encontraron %s resultados'
+            ],
             'FRONTMATTER_ERROR_PAGE' => '---
 title: %1$s
 ---
@@ -6711,6 +6748,12 @@ Ruta: `%2$s`
                 'NO_USER_ACCOUNTS' => 'حساب های کاربری پیدا نشد ، لطفا ابتدا یکی بسازید...',
                 'DEFAULT_DATE_FORMAT' => 'فرمت تاریخ صفحه',
                 'DEFAULT_DATE_FORMAT_HELP' => 'نوع نمایش تاریخ صفحه توسط Grav. به صورت پیش فرض Grav قصد دارد نوع نمایش تاریخ را پیشنهاد کند ، هرچند شما میتوانید یک نوع نمایش تاریخ با استفاده از سینتکس تاریخ PHP مشخص کنید (مانند: Y-m-d H:i)'
+            ],
+            'PLUGIN_SIMPLESEARCH' => [
+                'SEARCH_PLACEHOLDER' => 'جستجو...',
+                'SEARCH_RESULTS' => 'نتایج جستجو',
+                'SEARCH_RESULTS_SUMMARY_SINGULAR' => 'جستار: <strong>%s</strong> یک نتیجه یافت شد',
+                'SEARCH_RESULTS_SUMMARY_PLURAL' => 'جستار: <strong>%s</strong> %s نتیجه یافت شد'
             ]
         ],
         'fi' => [
@@ -7642,6 +7685,12 @@ Ruta: `%2$s`
                 'DROPZONE_REMOVE_FILE_CONFIRMATION' => 'Êtes-vous sûr de vouloir supprimer ce fichier ?',
                 'DROPZONE_RESPONSE_ERROR' => 'Le serveur a répondu avec le code {{statusCode}}.'
             ],
+            'PLUGIN_SIMPLESEARCH' => [
+                'SEARCH_PLACEHOLDER' => 'Recherche...',
+                'SEARCH_RESULTS' => 'Résultats de la recherche',
+                'SEARCH_RESULTS_SUMMARY_SINGULAR' => 'Recherche : Un résultat trouvé pour <strong>%s</strong>',
+                'SEARCH_RESULTS_SUMMARY_PLURAL' => 'Recherche : %2$s résultats trouvés pour <strong>%1$s</strong>'
+            ],
             'PLUGIN_LOGIN' => [
                 'USERNAME' => 'Nom d’utilisateur',
                 'EMAIL' => 'E-mail',
@@ -8440,6 +8489,12 @@ Path: `%2$s`
                 'ACCEPT' => 'Dopušteni MIME Tipovi',
                 'ACCEPT_HELP' => 'Lista dopuštenih MIME Tipova koji su dozvoljeni za upload',
                 'ERROR_VALIDATING_CAPTCHA' => 'Greška pri validiranju Captcha'
+            ],
+            'PLUGIN_SIMPLESEARCH' => [
+                'SEARCH_PLACEHOLDER' => 'Traži...',
+                'SEARCH_RESULTS' => 'Rezultati pretrage',
+                'SEARCH_RESULTS_SUMMARY_SINGULAR' => 'Upit: <strong>%s</strong> je pronašao jedan rezultat',
+                'SEARCH_RESULTS_SUMMARY_PLURAL' => 'Upit: <strong>%s</strong> je pronašao %s rezultata'
             ],
             'PLUGIN_LOGIN' => [
                 'ACCESS_DENIED' => 'Pristup odbijen...',
@@ -10034,6 +10089,13 @@ Elérési út: `%2$s`
                 'YES' => 'Si',
                 'NO' => 'No'
             ],
+            'PLUGIN_SIMPLESEARCH' => [
+                'SEARCH_PLACEHOLDER' => 'Cerca...',
+                'SEARCH_RESULTS' => 'Risultati della ricerca',
+                'SEARCH_RESULTS_SUMMARY_SINGULAR' => 'Ricerca: <strong>%s</strong>. Trovato un risultato',
+                'SEARCH_RESULTS_SUMMARY_PLURAL' => 'Ricerca: <strong>%s</strong>. Trovati %s risultati',
+                'SEARCH_FIELD_MINIMUM_CHARACTERS' => 'Inserisci almeno %s caratteri'
+            ],
             'FRONTMATTER_ERROR_PAGE' => '---Titolo: %1$s---# Errore: Frontmatter non valido: \'%2$s\' * *%3$s * * \' \'%4$s \' \'',
             'NICETIME' => [
                 'NO_DATE_PROVIDED' => 'Nessuna data fornita',
@@ -10585,6 +10647,12 @@ Elérési út: `%2$s`
                 'UPDATING_PACKAGES' => 'パッケージを更新中...',
                 'PACKAGES_SUCCESSFULLY_UPDATED' => 'パッケージは正常に更新されました。',
                 'UPDATING' => '更新中'
+            ],
+            'PLUGIN_SIMPLESEARCH' => [
+                'SEARCH_PLACEHOLDER' => '検索する...',
+                'SEARCH_RESULTS' => '検索結果',
+                'SEARCH_RESULTS_SUMMARY_SINGULAR' => '検索 : <strong>%s</strong> に一つの結果があります。',
+                'SEARCH_RESULTS_SUMMARY_PLURAL' => '検索 : <strong>%s</strong> に %s の結果があります。'
             ],
             'FRONTMATTER_ERROR_PAGE' => '---
 title: %1$s
@@ -11750,6 +11818,12 @@ Path: `%2$s`
                 'ALL' => 'Alle',
                 'FROM' => 'van',
                 'TO' => 'aan'
+            ],
+            'PLUGIN_SIMPLESEARCH' => [
+                'SEARCH_PLACEHOLDER' => 'Zoeken...',
+                'SEARCH_RESULTS' => 'Zoek resultaat',
+                'SEARCH_RESULTS_SUMMARY_SINGULAR' => 'Query: <strong>%s</strong> is 1 keer gevonden',
+                'SEARCH_RESULTS_SUMMARY_PLURAL' => 'Query: <strong>%s</strong> is %s keer gevonden'
             ],
             'INFLECTOR_IRREGULAR' => [
                 'person' => 'personen',
@@ -13193,6 +13267,12 @@ Path: `%2$s`
                 'TO' => 'para',
                 'RESOURCE_FILTER' => 'Filtro...'
             ],
+            'PLUGIN_SIMPLESEARCH' => [
+                'SEARCH_PLACEHOLDER' => 'O que você procura?',
+                'SEARCH_RESULTS' => 'Resultados da pesquisa',
+                'SEARCH_RESULTS_SUMMARY_SINGULAR' => 'Pesquisa: <strong>%s</strong>. Foram encontrados 1 resultados',
+                'SEARCH_RESULTS_SUMMARY_PLURAL' => 'Pesquisa: <strong>%s</strong>. Foram encontrados %s resultados'
+            ],
             'FRONTMATTER_ERROR_PAGE' => '---
 título: %1$s
 ---
@@ -13942,6 +14022,12 @@ Caminho: `%2$s`
                 'RECAPTCHA_SITE_KEY_HELP' => 'Pentru mai multe detalii vă rugăm vizitați https://developers.google.com/recaptcha',
                 'RECAPTCHA_SECRET_KEY' => 'Cheia secretă pentru Site',
                 'RECAPTCHA_SECRET_KEY_HELP' => 'Pentru mai multe detalii vă rugăm vizitați  https://developers.google.com/recaptcha'
+            ],
+            'PLUGIN_SIMPLESEARCH' => [
+                'SEARCH_PLACEHOLDER' => 'Caută...',
+                'SEARCH_RESULTS' => 'Rezultatele căutării',
+                'SEARCH_RESULTS_SUMMARY_SINGULAR' => 'Căutarea: <strong>%s</strong> a găsit un rezultat',
+                'SEARCH_RESULTS_SUMMARY_PLURAL' => 'Căutarea: <strong>%s</strong> a găsit %s rezultate'
             ],
             'PLUGIN_LOGIN' => [
                 'USERNAME' => 'Nume utilizator',
@@ -14796,6 +14882,12 @@ Calea: `%2$s`
                 'DROPZONE_RESPONSE_ERROR' => 'Сервер ответил кодом {{statusCode}}.',
                 'YES' => 'Да',
                 'NO' => 'Нет'
+            ],
+            'PLUGIN_SIMPLESEARCH' => [
+                'SEARCH_PLACEHOLDER' => 'Найти...',
+                'SEARCH_RESULTS' => 'Результат поиска',
+                'SEARCH_RESULTS_SUMMARY_SINGULAR' => 'По запросу: <strong>%s</strong> результатов найдено 1',
+                'SEARCH_RESULTS_SUMMARY_PLURAL' => 'По запросу: <strong>%s</strong> результатов найдено %s'
             ],
             'PLUGIN_LOGIN' => [
                 'USERNAME' => 'Логин',
@@ -15667,6 +15759,12 @@ Path: `%2$s`
                 'NON_VISIBLE' => 'Icke synlig',
                 'NOTIFICATIONS' => 'Notifikationer',
                 'LEGEND' => 'Sidförklaring'
+            ],
+            'PLUGIN_SIMPLESEARCH' => [
+                'SEARCH_PLACEHOLDER' => 'Sök...',
+                'SEARCH_RESULTS' => 'Sökresultat',
+                'SEARCH_RESULTS_SUMMARY_SINGULAR' => 'Sökning: <strong>%s</strong> hittade ett resultat',
+                'SEARCH_RESULTS_SUMMARY_PLURAL' => 'Sökning: <strong>%s</strong> hittade %s resultat'
             ],
             'FRONTMATTER_ERROR_PAGE' => '--- titel: %1$s --- # Fel: Ogiltig Frontmatter-sökväg: `%2$s` **%3$s** ``` %4$s ```',
             'NICETIME' => [
@@ -17916,6 +18014,12 @@ Path: `%2$s`
             'PLUGIN_ERROR' => [
                 'ERROR' => '错误',
                 'ERROR_MESSAGE' => '呃，似乎这个页面不存在。'
+            ],
+            'PLUGIN_SIMPLESEARCH' => [
+                'SEARCH_PLACEHOLDER' => '搜索...',
+                'SEARCH_RESULTS' => '搜索结果',
+                'SEARCH_RESULTS_SUMMARY_SINGULAR' => '查询: <strong>%s</strong> 找到 1 个结果',
+                'SEARCH_RESULTS_SUMMARY_PLURAL' => '查询: <strong>%s</strong> 找到 %s 个结果'
             ]
         ],
         'nb' => [
@@ -17943,7 +18047,7 @@ Path: `%2$s`
                 6 => 'søndag'
             ]
         ],
-        'checksum' => 'f57743965a4e1db949499b7f0310139f',
-        'timestamp' => 1508611141
+        'checksum' => '9da678303d313aa529ff9f3c94c695f4',
+        'timestamp' => 1509528193
     ]
 ];
